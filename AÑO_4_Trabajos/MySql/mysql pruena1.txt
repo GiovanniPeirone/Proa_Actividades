@@ -1,0 +1,15 @@
+create database UniversidadCordoba;
+use UniversidadCordoba;
+
+CREATE TABLE Carrera(
+idCarera INT AUTO_INCREMENT PRIMARY KEY,
+nombre varchar(255) not null
+);
+
+create table Alumno(
+idAlumno INT AUTO_INCREMENT PRIMARY KEY,
+id_carrera INT NOT NULL,
+nombreAlumno VARCHAR(255) NOT NULL,
+apellido VARCHAR(255) NOT NULL,
+foreign key (id_carrera) references Carrera(idCarera) 
+);

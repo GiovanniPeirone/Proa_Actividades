@@ -1,0 +1,35 @@
+create database if not exists Auto_tipo;
+use Auto_tipo;
+
+create table autosTipo(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nombreTipo varchar(255)NOT NULL
+);
+create table autosMarca(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nombreTipo2 varchar(255)NOT NULL
+);
+
+create table Auto(
+id INT AUTO_INCREMENT PRIMARY KEY,
+id_Marca varchar(255)NOT NULL,
+id_Tipo_de_auto varchar(255)NOT NULL,
+PRIMARY KEY (id),
+foreign key (id_Marca) references autosMarca(id),
+foreign key (id_Tipo_de_auto) references autosTipo(id)
+);
+
+
+INSERT INTO autosMarca (id, nombreTipo2)
+VALUES (1, Fiat);
+INSERT INTO autosMarca (id, nombreTipo2)
+VALUES (2, Fort);
+INSERT INTO autosMarca (id, nombreTipo2)
+VALUES (3, BMW);
+
+INSERT INTO autosTipo (id, nombreTipo)
+VALUES (1, camioneta);
+INSERT INTO autosTipo (id, nombreTipo)
+VALUES (2, descapotable);
+INSERT INTO autosTipo (id, nombreTipo)
+VALUES (3, camion);
